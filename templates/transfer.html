@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item Transfer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/transfer.css') }}">
+</head>
+<body>
+    {% include 'partials/navbar.html' %}
+    <div id="transfer-page">
+        <div id="transfer-form-container">
+            <h2>Transfer Item</h2>
+            <form id="transfer-form" method="POST" action="{{ url_for('transfer.submit_transfer') }}">
+
+                <!-- Source Warehouse -->
+                <div class="form-group">
+                    <label for="source_warehouse">Source Warehouse</label>
+                    <select id="source_warehouse" name="source_warehouse_id" required>
+                        <option value="" disabled selected>Select Source Warehouse</option>
+                        {% for warehouse in warehouses %}
+                            <option value="{{ warehouse[0] }}">{{ warehouse[1] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Select Item -->
+                <div class="form-group">
+                    <label for="item">Select Item</label>
+                    <select id="item" name="item_id" required>
+                        <option value="" disabled selected>Select Item</option>
+                    </select>
+                </div>
+
+                <!-- Destination Warehouse -->
+                <div class="form-group">
+                    <label for="destination_warehouse">Destination Warehouse</label>
+                    <select id="destination_warehouse" name="destination_warehouse_id" required>
+                        <option value="" disabled selected>Select Destination Warehouse</option>
+                        {% for warehouse in warehouses %}
+                            <option value="{{ warehouse[0] }}">{{ warehouse[1] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <button type="submit">Submit Transfer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/transfer.js') }}" defer></script>
+</body>
+</html>

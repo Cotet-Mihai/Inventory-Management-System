@@ -1,0 +1,12 @@
+{% block navbar %}
+	<nav>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+
+        <div class="left-buttons">
+            <button id="home" onclick=window.location.href='{{ url_for('dashboard.dashboard') }}'>Home</button>
+            <button id="transfer" onclick=window.location.href='{{ url_for('transfer.transfer') }}'>Transfer</button>
+            <button id="add" onclick=window.location.href='{{ url_for('add.add') }}'>Add</button>
+        </div>
+        <button id="logout" onclick=window.location.href='{{ url_for('auth.logout') }}'>Logout</button>
+    </nav>
+{% endblock %}

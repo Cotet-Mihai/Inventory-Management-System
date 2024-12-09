@@ -1,0 +1,60 @@
+nav {
+    background-color: #1f1f1f;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #333;
+}
+
+nav .left-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+nav button {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav button:hover {
+    background-color: #4CAF50;
+    transform: translateY(-3px);
+}
+
+nav button:active {
+    background-color: #45a049;
+    transform: translateY(1px);
+}
+
+#logout {
+    background-color: #e74c3c;
+    border: 1px solid #d43f3a;
+}
+
+#logout:hover {
+    background-color: #c0392b;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

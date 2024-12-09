@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    width: 80%;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.tables-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 600px;
+}
+
+.table-container, .table-container-transfer {
+    width: 48%;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+    overflow-x: auto;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.item-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.item-table th, .item-table td {
+    padding: 12px;
+    border: 1px solid #555;
+    text-align: left;
+}
+
+.item-table th {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+.item-table tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+.item-table tr:hover {
+    background-color: #444;
+}
+
+.item-table td {
+    color: #e0e0e0;
+}
+
+.table-container-transfer {
+    width: 100%;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+    overflow-x: auto;
+    animation: fadeIn 1s ease-out;
+}
+
+.table-container-transfer h2 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.table-container-transfer .item-table {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .tables-container {
+        flex-direction: column;
+    }
+
+    .table-container {
+        width: 100%;
+    }
+}

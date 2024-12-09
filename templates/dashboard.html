@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    {% include 'partials/navbar.html' %}
+    <div class="container">
+        <div class="tables-container">
+            <div class="table-container">
+                <h2>Items</h2>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in items %}
+                            <tr>
+                                <td>{{ item[0] }}</td>
+                                <td>{{ item[1] }}</td>
+                                <td>{{ item[2] }}</td>
+                                <td>{{ item[3] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-container">
+                <h2>Warehouses</h2>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for warehouse in warehouses %}
+                            <tr>
+                                <td>{{ warehouse[0] }}</td>
+                                <td>{{ warehouse[1] }}</td>
+                                <td>{{ warehouse[2] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="table-container-transfer">
+            <h2>Item Transfer List</h2>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Transfer ID</th>
+                        <th>Item Name</th>
+                        <th>Warehouse Name</th>
+                        <th>User</th>
+                        <th>Date & Time</th>
+                        <th>Transfer Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for transfer in transfers %}
+                        <tr>
+                            <td>{{ transfer[0] }}</td>
+                            <td>{{ transfer[1] }}</td>
+                            <td>{{ transfer[2] }}</td>
+                            <td>{{ transfer[3] }}</td>
+                            <td>{{ transfer[4] }}</td>
+                            <td>{{ transfer[5] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
